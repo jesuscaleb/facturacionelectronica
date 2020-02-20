@@ -1,0 +1,16 @@
+// stylelint-disable property-blacklist
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    @if length($transition) == 0 {
+      transition: $transition-base;
+    } @else {
+      transition: $transition;
+    }
+  }
+  @if $enable-prefers-reduced-motion-media-query {
+    @media (prefers-reduced-motion: reduce) {
+      /*REMINDME: Si el sistema operativo del usuario ha configurado desactivar las animaciones, configurar esta linea*/
+      transition: none; 
+    }
+  }
+}

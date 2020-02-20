@@ -1,0 +1,4 @@
+# Ignoring sass-cache file
+*.sass-cache
+# Ignoring CSS maping from SASS
+css/index.css.map
